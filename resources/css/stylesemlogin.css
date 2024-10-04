@@ -1,0 +1,256 @@
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto */
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Menu */
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #77b374;
+}
+
+header .user-icon {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Efeito Parallax */
+.hero.parallax {
+    height: 91vh;
+    background-image: url('folhasfundo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 96px;
+    font-weight: 600;
+    color: #77b374;
+}
+
+.hero h1 .eco {
+    font-size: 70px;
+}
+
+.hero h1 .herbario {
+    margin-top: -150px;
+    font-size: 96px;
+}
+
+/* Seção Plantas */
+.plantas {
+    padding: 50px 20px; /* Adiciona um padding lateral */
+    background-color: #2a2a2a;
+    text-align: center;
+}
+
+.plantas h2 {
+    font-size: 42px;
+    color: #77b374;
+    line-height: 1.4;
+}
+
+/* Estilos dos cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 35px auto; /* Altera para 'auto' para centralizar */
+    max-width: 1200px;
+    grid-gap: 54px;
+    padding: 16px;
+}
+
+@media (min-width: 540px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 960px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card {
+    position: relative;
+    padding-bottom: 150%;
+    transition: transform 0.3s ease;
+    border-radius: 16px; /* Aumenta o arredondamento dos cantos */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+}
+
+.card-background {
+    background-image: url('/resources/css/tropicais.jpg'); /* Caminho absoluto */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    filter: brightness(.75) saturate(1.2);
+}
+
+.card-content {
+    position: absolute;
+    padding: 24px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha o conteúdo na parte inferior */
+}
+
+.card-title {
+    font-size: 24px; /* Aumenta o tamanho do título */
+    font-weight: 700; /* Deixa o título mais grosso */
+    margin-bottom: 8px; /* Adiciona espaçamento inferior */
+}
+
+.card-description {
+    font-size: 16px; /* Tamanho do texto da descrição */
+    font-weight: 400; /* Peso da fonte para a descrição */
+}
+
+/* Painel lateral de usuário */
+.user-panel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1001;
+    color: white;
+}
+
+.user-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 20px 30px; /* Adicionado espaçamento inferior */
+}
+
+.user-panel h2 {
+    font-size: 24px;
+}
+
+.user-panel .user-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.user-panel-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+}
+
+.user-panel-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin: 20px 0; /* Aumentado o espaçamento entre os itens */
+    transition: background 0.3s ease;
+}
+
+.user-panel-nav a:hover {
+    background-color: #444;
+}
+
+.user-panel-nav .logout {
+    font-weight: bold;
+    color: #ff4c4c;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 36px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos do botão Login */
+.login-btn {
+    background-color: #77b374;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; /* Borda arredondada */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Transição suave */
+    position: relative;
+    z-index: 1000;
+    margin-left: 20px; /* Adiciona espaçamento à esquerda */
+}
+
+.login-btn:hover {
+    background-color: #fff;
+    color: #77b374;
+    transform: scale(1.1); /* Cresce levemente */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Para garantir que as fontes sejam carregadas */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
